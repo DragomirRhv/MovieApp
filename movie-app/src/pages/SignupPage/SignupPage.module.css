@@ -1,0 +1,23 @@
+.formContainer {
+  animation: form-appear 1s ease-in-out forwards;
+}
+
+.animation-appearance {
+  animation: form-appear 1s ease-in-out forwards;
+}
+
+.visibilityIcon svg {
+  color: #594c4b !important;
+}
+
+@keyframes form-appear {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,15 @@
+.text-link {
+  outline: none;
+  text-decoration: none;
+  color: #594c4b;
+  padding: 0.5rem;
+  background-color: #594c4b;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.text-link:hover,
+.text-link:active,
+.text-link:visited {
+  text-decoration: none;
+}

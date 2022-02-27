@@ -1,0 +1,4 @@
+export const SEARCH_SHOWS = "SEARCH_SHOWS";
+export const SET_LOADING = "SET_LOADING";
+export const SET_SINGLE_SHOW = "SET_SINGLE_SHOW";
+export const REMOVE_SINGLE_SHOW = "REMOVE_SINGLE_SHOW";
