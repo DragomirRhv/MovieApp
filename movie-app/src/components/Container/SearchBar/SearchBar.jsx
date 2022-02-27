@@ -74,6 +74,7 @@ export default function SearchBar() {
             variant="outlined"
             sx={styles.searchButton}
             onClick={onSearchHandler}
+            type="submit"
           >
             Search
           </Button>

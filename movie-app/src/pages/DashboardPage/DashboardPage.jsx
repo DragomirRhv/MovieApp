@@ -1,8 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Box } from "@mui/material";
 import AppBarComponent from "../../components/Container/AppBarComponent/AppBarComponent";
 import SearchBar from "../../components/Container/SearchBar/SearchBar";
 import ShowsContext from "../../context/Shows/showsContext";
+import { useSnackBar } from "../../context/SnackbarContext/SnackbarContext";
 import DashboardPageLoadingSkeleton from "./DashboardPageLoadingSkeleton";
 import MovieCard from "./MovieCard/MovieCard";
 import NoImage from "../../assets/images/no-image/no-image.jpeg";
@@ -21,12 +22,25 @@ const styles = {
 
 export default function DashboardPage() {
   const showsContext = useContext(ShowsContext);
-  const { loading, shows } = showsContext;
+  const { loading, shows, searchTVShows } = showsContext;
+  const { showSnackBar } = useSnackBar();
+
+  useEffect(() => {
+    try {
+      searchTVShows("bad");
+    } catch {
+      showSnackBar({
+        text: "Could not fetch data! Sorry...",
+        type: "error",
+        hideDuration: 6000,
+      });
+    }
+  }, []);
 
   return (
     <AppBarComponent>
       <SearchBar />
-      <Box sx={{ margin: "2rem auto" }}>
+      <Box sx={{ margin: "7rem auto" }}>
         {loading ? (
           <DashboardPageLoadingSkeleton />
         ) : (

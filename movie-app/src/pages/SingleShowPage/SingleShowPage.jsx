@@ -22,6 +22,11 @@ const styles = {
       backgroundColor: "#423838",
     },
   },
+  image: {
+    width: "100%",
+    height: "auto",
+    maxWidth: "210px",
+  },
 };
 
 export default function SingleShowPage() {
@@ -61,6 +66,7 @@ export default function SingleShowPage() {
           <img
             src={singleShow.image ? singleShow.image.medium : NoImage}
             alt={singleShow.name}
+            style={{ maxWidth: "250px" }}
           />
           <Box>
             <Typography variant="h3">{singleShow.name}</Typography>
